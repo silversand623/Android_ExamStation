@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="titleFont">#ffffff</color>
+    <color name="contentFont1">#1b6193</color>
+    <color name="contentFont2">#000000</color>
+    <color name="borderColor">#ddd</color>
+    <color name="bannerBgColor">#1b6193</color>
+    <color name="pictureFontColor">#333333</color>
+    <color name="orangeColor">#F8B62C</color>
+</resources>
