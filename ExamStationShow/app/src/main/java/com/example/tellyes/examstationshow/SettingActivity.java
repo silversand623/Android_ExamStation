@@ -89,11 +89,11 @@ public class SettingActivity extends AppCompatActivity {
                     AlertMessage("IP地址必须填写。");
                     return;
                 }
-                if(RoomName.getText().toString()=="")
-                {
-                    AlertMessage("房间必须填写。");
-                    return;
-                }
+                //if(RoomName.getText().toString()=="")
+                //{
+                   // AlertMessage("房间必须填写。");
+                    //return;
+                //}
                 Pattern pattern = Pattern
                         .compile("(2[5][0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2}:\\d{0,5}$)");
                 Matcher matcher = pattern.matcher(IPAddress
@@ -112,14 +112,20 @@ public class SettingActivity extends AppCompatActivity {
                             .putString("roomname", RoomName.getText()
                                     .toString())
                             .commit();
+
+                    if(BaseUrl!=null && RoomName.getText().toString()=="") {
+                        GetRoomInfoUTF8();
+                    }
+                    AlertMessage("设置信息成功。");
                     //保存成功之后返回首页
-                    Intent intent = new Intent();
-                    intent.setClass(SettingActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                   // Intent intent = new Intent();
+                    //intent.setClass(SettingActivity.this, MainActivity.class);
+                   // startActivity(intent);
+                   // finish();
                 } else {
-                    Toast.makeText(getApplicationContext(), "设置信息失败",
-                            Toast.LENGTH_LONG);
+                    AlertMessage("设置信息失败。");
+                    //Toast.makeText(getApplicationContext(), "设置信息失败",
+                           // Toast.LENGTH_LONG);
                 }
             }
         });
