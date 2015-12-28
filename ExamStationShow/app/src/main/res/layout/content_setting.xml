@@ -47,6 +47,16 @@
                     android:background="@drawable/buttonstyle"
                     android:id="@+id/IPAddress"
                     />
+                <TextView
+                    android:layout_width="63dp"
+                    android:layout_height="63dp"
+                    android:text="保存"
+                    android:textSize="@dimen/pageFontSize"
+                    android:textColor="@color/titleFont"
+                    android:background="@drawable/save_btn"
+                    android:gravity="center"
+                    android:id="@+id/btnSaveIp"
+                    />
             </TableRow>
             <TableRow
                 android:divider="@color/contentFont2"
@@ -59,7 +69,7 @@
                     android:text="例如：192.168.4.132:6006"
                     android:textSize="@dimen/pageFontSize"
                     android:textColor="@color/colorAccent"
-                    android:layout_span="2"
+                    android:layout_span="3"
                     android:layout_marginLeft="110dp"
                     />
             </TableRow>
@@ -82,12 +92,13 @@
                         android:background="@drawable/buttonstyle"
                         >
                     </Spinner>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:id="@+id/RoomName" />
             </TableRow>
         </TableLayout>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:id="@+id/RoomName" />
+
     </LinearLayout>
 </RelativeLayout>

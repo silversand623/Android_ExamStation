@@ -36,6 +36,7 @@ public class SettingActivity extends AppCompatActivity {
     private EditText RoomName;
     private TextView btnSave;
     private TextView btnBack;
+    private TextView btnSaveIp;
 
     String BaseUrl;
     String roomname;
@@ -52,6 +53,7 @@ public class SettingActivity extends AppCompatActivity {
 
         btnSave=(TextView)findViewById(R.id.btnSave);
         btnBack=(TextView)findViewById(R.id.btnBack);
+        btnSaveIp=(TextView)findViewById(R.id.btnSaveIp);
         spinner = (Spinner) findViewById(R.id.Spinner01);
 
         //将可选内容与ArrayAdapter连接起来
@@ -89,18 +91,18 @@ public class SettingActivity extends AppCompatActivity {
                     AlertMessage("IP地址必须填写。");
                     return;
                 }
-                //if(RoomName.getText().toString()=="")
-                //{
-                   // AlertMessage("房间必须填写。");
-                    //return;
-                //}
+                if(RoomName.getText().toString()=="")
+                {
+                    AlertMessage("房间不能为空。");
+                    return;
+                }
                 Pattern pattern = Pattern
                         .compile("(2[5][0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2}:\\d{0,5}$)");
                 Matcher matcher = pattern.matcher(IPAddress
                         .getText().toString()); // 以验证127.400.600.2为例
                 if (matcher.find()) {
-                    Toast.makeText(getApplicationContext(), "设置成功",
-                            Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(), "设置成功",
+                            //Toast.LENGTH_LONG).show();
                     SharedPreferences userInfo = getSharedPreferences(
                             "user_info", 0);
 
@@ -113,19 +115,50 @@ public class SettingActivity extends AppCompatActivity {
                                     .toString())
                             .commit();
 
-                    if(BaseUrl!=null && RoomName.getText().toString()=="") {
-                        GetRoomInfoUTF8();
-                    }
                     AlertMessage("设置信息成功。");
                     //保存成功之后返回首页
-                   // Intent intent = new Intent();
-                    //intent.setClass(SettingActivity.this, MainActivity.class);
-                   // startActivity(intent);
-                   // finish();
+                    Intent intent = new Intent();
+                    intent.setClass(SettingActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     AlertMessage("设置信息失败。");
                     //Toast.makeText(getApplicationContext(), "设置信息失败",
                            // Toast.LENGTH_LONG);
+                }
+            }
+        });
+        //保存IP地址按钮
+        btnSaveIp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (IPAddress.getText().toString() == "") {
+                    AlertMessage("IP地址必须填写。");
+                    return;
+                }
+                Pattern pattern = Pattern
+                        .compile("(2[5][0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2}:\\d{0,5}$)");
+                Matcher matcher = pattern.matcher(IPAddress
+                        .getText().toString()); // 以验证127.400.600.2为例
+                if (matcher.find()) {
+                    // Toast.makeText(getApplicationContext(), "设置成功",
+                    //Toast.LENGTH_LONG).show();
+                    SharedPreferences userInfo = getSharedPreferences(
+                            "user_info", 0);
+                    userInfo.edit()
+                            .putString(
+                                    "ipconfig",
+                                    IPAddress.getText()
+                                            .toString())
+                            .commit();
+                    BaseUrl = IPAddress.getText().toString();
+                    AlertMessage("IP地址设置信息成功。");
+                    GetRoomInfoUTF8();
+                }
+                else {
+                    AlertMessage("IP地址格式错误，设置信息失败。");
+                    //Toast.makeText(getApplicationContext(), "设置信息失败",
+                    // Toast.LENGTH_LONG);
                 }
             }
         });
@@ -146,7 +179,8 @@ public class SettingActivity extends AppCompatActivity {
         public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
             TextView tv = (TextView)arg1;
             tv.setTextSize(20.0f);    //设置大小
-            RoomName.setText(m.get(arg2));
+            //只截取前面的房间号
+            RoomName.setText(m.get(arg2).substring(0,m.get(arg2).indexOf("(")));
         }
 
         public void onNothingSelected(AdapterView<?> arg0) {
@@ -179,7 +213,12 @@ public class SettingActivity extends AppCompatActivity {
                                {
                                    index=i;
                                }
-                                m.add(roomInfoList.get(i).RoomName);
+                               if(roomInfoList.get(i).State.equals("1")) {
+                                   m.add(roomInfoList.get(i).RoomName+"(有考试)");
+                               }
+                               else {
+                                   m.add(roomInfoList.get(i).RoomName+"(没有考试)");
+                               }
                            }
                             adapter.notifyDataSetChanged();
                             //设置选中房间
