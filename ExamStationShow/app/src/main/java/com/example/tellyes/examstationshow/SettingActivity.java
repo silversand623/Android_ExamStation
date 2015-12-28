@@ -228,7 +228,7 @@ public class SettingActivity extends AppCompatActivity {
                             }
 
                         } catch (Exception eJson) {
-                            System.out.println(eJson);
+                            AlertMessage("网络连接错误，获取房间信息失败。");
                         }
 
                     }
