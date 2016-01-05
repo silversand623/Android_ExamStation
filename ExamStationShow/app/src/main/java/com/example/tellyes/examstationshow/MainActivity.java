@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
     private Chronometer chronometer2;
     //记时五秒执行取数据
     int preS=10;
+    //为了校对系统时间,暂定为2分钟，执行一次
+    int CheckS=120;
     //设置当前时间
     Date SysCurrentTime=new Date();
     long IntervalDate;
@@ -184,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
                     second = "0" + second;
                 }
                 CurrentTime.setText(hour + "h " + minute + "m " + second + "s");
+                CheckS=CheckS-1;
                 //剩余时间计算,每次减一秒
                 if (IntervalDate >= 1000) {
                     IntervalDate = IntervalDate - 1000;
@@ -192,10 +195,11 @@ public class MainActivity extends AppCompatActivity {
                     String m = String.valueOf(s / 60).length() == 1 ? "0" + String.valueOf(s / 60) : String.valueOf(s / 60);
                     String s1 = String.valueOf(s % 60).length() == 1 ? "0" + String.valueOf(s % 60) : String.valueOf(s % 60);
                     LeaveTime.setText(m + "m " + s1 + "s");
-                    //if(s<5)
-                    //{
-                    //getSystemState();
-                    //}
+                    //如果校对时间已到2分钟，就调用重新加载数据
+                    if (CheckS<0) {
+                        CheckS = 120;
+                        GetUserInfo();
+                    }
                 } else {
                     //StartFlag=false;
                     GetUserInfo();
