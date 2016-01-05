@@ -118,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:text="考试状态"
                         android:textSize="@dimen/pageFontSize"
-                        android:textColor="@color/contentFont2"
+                        android:textColor="@color/greenColor"
                         android:id="@+id/ExamState" />
                     <TextView
                         android:layout_width="@dimen/fontWidth1"
@@ -212,17 +212,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true">
             <ImageView
-                android:layout_width="265dp"
-                android:layout_height="265dp"
+                android:layout_width="258dp"
+                android:layout_height="260dp"
                 android:id="@+id/imgView1"
                 android:background="@drawable/studentimg"
                 />
             <ImageView
-                android:layout_width="265dp"
-                android:layout_height="265dp"
+                android:layout_width="258dp"
+                android:layout_height="260dp"
                 android:id="@+id/imgView2"
                 android:background="@drawable/studentimg2"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                />
             <LinearLayout
                 android:orientation="horizontal"
