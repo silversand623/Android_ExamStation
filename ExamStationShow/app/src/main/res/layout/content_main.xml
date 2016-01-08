@@ -145,7 +145,7 @@
                         <TextView
                             android:layout_width="@dimen/fontWidth1"
                             android:layout_height="wrap_content"
-                            android:text="考试题目"
+                            android:text="考试科目"
                             android:textSize="@dimen/pageFontSize"
                             android:textColor="@color/contentFont1"
                             />
@@ -176,7 +176,7 @@
                         <TextView
                             android:layout_width="@dimen/fontWidth1"
                             android:layout_height="wrap_content"
-                            android:text="考试内容"
+                            android:text="考站描述"
                             android:textSize="@dimen/pageFontSize"
                             android:textColor="@color/contentFont1"
                             />

@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="30dp"
         >
         <TableLayout
@@ -41,7 +41,7 @@
                     />
                 <EditText
                     android:layout_width="@dimen/fontWidth2"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:textSize="@dimen/pageFontSize"
                     android:textColor="@color/contentFont2"
                     android:background="@drawable/buttonstyle"
@@ -89,7 +89,7 @@
                     />
                     <Spinner android:id="@+id/Spinner01"
                         android:layout_width="fill_parent"
-                        android:layout_height="35dp"
+                        android:layout_height="45dp"
                         android:background="@drawable/buttonstyle"
                         >
                     </Spinner>

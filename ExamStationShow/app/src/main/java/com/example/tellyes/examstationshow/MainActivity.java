@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                             if (examStationInfo.result.equals("1")) {
                                 EsName.setText(URLDecoder.decode(examStationInfo.EsName, "UTF-8"));
                                 ExamName.setText(URLDecoder.decode(examStationInfo.ExamName, "UTF-8"));
-                                ExamTitle.setText(URLDecoder.decode(examStationInfo.ExamName, "UTF-8"));
+                                ExamTitle.setText(URLDecoder.decode(examStationInfo.Curriculum, "UTF-8"));
                               ExamContent.setText(URLDecoder.decode(examStationInfo.Content, "UTF-8"));
                             } else {
                                 chronometer.stop();
@@ -333,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
                             //此时有数据
                             if (examUserInfo.result.equals("1")) {
 
-                                UserName.setText(URLDecoder.decode(examUserInfo.StuExamNumber, "UTF-8"));
+                                UserName.setText(URLDecoder.decode(examUserInfo.UName, "UTF-8"));
                                 NextStation.setText(URLDecoder.decode(examUserInfo.NextESName, "UTF-8"));
                                 CurrentTime.setText(examUserInfo.strSystemTime);
                                 ExamTime.setText(examUserInfo.StuStartTime.substring(0, examUserInfo.StuStartTime.lastIndexOf(":")) + "--" + examUserInfo.StuEndTime.substring(0, examUserInfo.StuEndTime.lastIndexOf(":")));
@@ -345,7 +345,12 @@ public class MainActivity extends AppCompatActivity {
                                 }else {
                                     ExamState.setTextColor(Color.BLACK);
                                 }*/
-                                NextStuExamNumber.setText(URLDecoder.decode(examUserInfo.NextStuExamNumber, "UTF-8"));
+                                if (examUserInfo.NextUName != null && !examUserInfo.NextUName.equals("")) {
+                                    NextStuExamNumber.setText(URLDecoder.decode(examUserInfo.NextUName, "UTF-8"));
+                                } else {
+                                    NextStuExamNumber.setText("本站考试结束");
+                                }
+
 
                                 SysCurrentTime = sdf.parse(examUserInfo.strSystemTime);
                                 cal.setTime(SysCurrentTime);
@@ -485,10 +490,10 @@ public class MainActivity extends AppCompatActivity {
                                         String res = obj.getString("IsSave");
                                         if (res.equals("1")) {
                                             //如果上传成功则填充上面图片
-                                            //AlertMessage("上传图片数据成功。");
-                                            imgView2.setImageResource(R.drawable.studentimg2);
-                                            imagePath=null;
-                                            imgView1.setImageBitmap(BitmapFactory.decodeFile(imagePath));
+                                            AlertMessage("上传图片数据成功。");
+                                            //imgView2.setImageResource(R.drawable.studentimg2);
+                                            //imagePath=null;
+                                            //imgView1.setImageBitmap(BitmapFactory.decodeFile(imagePath));
                                         } else {
                                             AlertMessage("上传图片数据失败。");
                                         }

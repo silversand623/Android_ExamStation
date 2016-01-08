@@ -19,4 +19,5 @@ public class ExamUserInfo {
     public String strStudentStartTime;
     public String strStationExamTime;
     public String strStationScoreTime;
+    public String NextUName;
 }

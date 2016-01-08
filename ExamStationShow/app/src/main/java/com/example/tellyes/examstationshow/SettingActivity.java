@@ -25,6 +25,7 @@ import com.google.gson.reflect.TypeToken;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -214,10 +215,10 @@ public class SettingActivity extends AppCompatActivity {
                                    index=i;
                                }
                                if(roomInfoList.get(i).State.equals("1")) {
-                                   m.add(roomInfoList.get(i).RoomName+"(有考试)");
+                                   m.add(URLDecoder.decode(roomInfoList.get(i).RoomName, "UTF-8") + "(有考试)");
                                }
                                else {
-                                   m.add(roomInfoList.get(i).RoomName+"(没有考试)");
+                                   m.add(URLDecoder.decode(roomInfoList.get(i).RoomName, "UTF-8")+"(没有考试)");
                                }
                            }
                             adapter.notifyDataSetChanged();
