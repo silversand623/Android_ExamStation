@@ -3,8 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="pageFontSize">24dp</dimen>
-    <dimen name="pageTitleFontSize">24dp</dimen>
+    <dimen name="pageFontSize">28dp</dimen>
+    <dimen name="pageTitleFontSize">28dp</dimen>
     <dimen name="fontWidth1">110dp</dimen>
     <dimen name="fontWidth2">365dp</dimen>
     <dimen name="singleHeight">65dp</dimen>

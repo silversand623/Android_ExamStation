@@ -16,6 +16,75 @@
         android:id="@+id/linearLayout">
         <LinearLayout
             android:orientation="vertical"
+            android:layout_width="320dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true">
+            <ImageView
+                android:layout_width="258dp"
+                android:layout_height="260dp"
+                android:id="@+id/imgView1"
+                android:background="@drawable/studentimg"
+                />
+            <ImageView
+                android:layout_width="258dp"
+                android:layout_height="260dp"
+                android:id="@+id/imgView2"
+                android:background="@drawable/studentimg2"
+                android:layout_marginTop="10dp"
+               />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="80dp"
+                    android:layout_height="@dimen/pictureTextHeight"
+                    android:gravity="center_horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="63dp"
+                        android:layout_height="63dp"
+                        android:background="@drawable/upload"
+                        android:id="@+id/btnUpload"
+                        />
+                    </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="80dp"
+                    android:layout_height="@dimen/pictureTextHeight"
+                    android:gravity="center_horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="63dp"
+                        android:layout_height="63dp"
+                        android:background="@drawable/picture"
+                        android:id="@+id/btnCamera"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="80dp"
+                    android:layout_height="@dimen/pictureTextHeight"
+                    android:gravity="center_horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="63dp"
+                        android:layout_height="63dp"
+                        android:background="@drawable/clear"
+                        android:id="@+id/btnClear"
+                        />
+
+                    </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -27,7 +96,7 @@
                 android:background="@color/borderColor"
                 >
                 <TableRow
-                   android:divider="@color/contentFont2"
+                    android:divider="@color/contentFont2"
                     android:background="@color/titleFont"
                     android:layout_marginBottom="@dimen/lineHeight"
                     android:minHeight="@dimen/singleHeight"
@@ -39,7 +108,7 @@
                         android:text="当前考生"
                         android:textSize="@dimen/pageFontSize"
                         android:textColor="@color/contentFont1"
-                         />
+                        />
                     <TextView
                         android:layout_width="@dimen/fontWidth2"
                         android:layout_height="wrap_content"
@@ -118,7 +187,7 @@
                         android:layout_height="wrap_content"
                         android:text="考试状态"
                         android:textSize="@dimen/pageFontSize"
-                        android:textColor="@color/greenColor"
+                        android:textColor="@color/contentFont2"
                         android:id="@+id/ExamState" />
                     <TextView
                         android:layout_width="@dimen/fontWidth1"
@@ -132,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:text="剩余时间"
                         android:textSize="@dimen/pageFontSize"
-                        android:textColor="@color/orangeColor"
+                        android:textColor="@color/contentFont2"
                         android:id="@+id/LeaveTime" />
                 </TableRow>
                 <TableRow
@@ -142,22 +211,22 @@
                     android:minHeight="@dimen/singleHeight"
                     android:gravity="center_vertical"
                     >
-                        <TextView
-                            android:layout_width="@dimen/fontWidth1"
-                            android:layout_height="wrap_content"
-                            android:text="考试科目"
-                            android:textSize="@dimen/pageFontSize"
-                            android:textColor="@color/contentFont1"
-                            />
-                        <TextView
-                            android:layout_width="@dimen/ExamTitleFontWidth"
-                            android:layout_height="wrap_content"
-                            android:text="考试题目"
-                            android:textSize="@dimen/pageFontSize"
-                            android:textColor="@color/contentFont2"
-                            android:id="@+id/ExamTitle"
-                            android:layout_span="3"
-                            />
+                    <TextView
+                        android:layout_width="@dimen/fontWidth1"
+                        android:layout_height="wrap_content"
+                        android:text="考试科目"
+                        android:textSize="@dimen/pageFontSize"
+                        android:textColor="@color/contentFont1"
+                        />
+                    <TextView
+                        android:layout_width="@dimen/ExamTitleFontWidth"
+                        android:layout_height="wrap_content"
+                        android:text="考试题目"
+                        android:textSize="@dimen/pageFontSize"
+                        android:textColor="@color/contentFont2"
+                        android:id="@+id/ExamTitle"
+                        android:layout_span="3"
+                        />
 
                 </TableRow>
                 <TableRow
@@ -197,101 +266,13 @@
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 android:id="@+id/chronometer"
-               />
+                />
             <Chronometer
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 android:id="@+id/chronometer2"
                 />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="320dp"
-            android:gravity="center_horizontal"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true">
-            <ImageView
-                android:layout_width="258dp"
-                android:layout_height="260dp"
-                android:id="@+id/imgView1"
-                android:background="@drawable/studentimg"
-                />
-            <ImageView
-                android:layout_width="258dp"
-                android:layout_height="260dp"
-                android:id="@+id/imgView2"
-                android:background="@drawable/studentimg2"
-                android:layout_marginTop="10dp"
-               />
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:gravity="center_horizontal"
-                android:paddingTop="10dp"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="80dp"
-                    android:layout_height="@dimen/pictureTextHeight"
-                    android:gravity="center_horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="63dp"
-                        android:layout_height="63dp"
-                        android:background="@drawable/upload"
-                        android:id="@+id/btnUpload"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="上传"
-                        android:textSize="@dimen/pictureFontSize"
-                        android:textColor="@color/pictureFontColor"
-                        />
-                    </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="80dp"
-                    android:layout_height="@dimen/pictureTextHeight"
-                    android:gravity="center_horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="63dp"
-                        android:layout_height="63dp"
-                        android:background="@drawable/picture"
-                        android:id="@+id/btnCamera"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="拍照"
-                        android:textSize="@dimen/pictureFontSize"
-                        android:textColor="@color/pictureFontColor"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="80dp"
-                    android:layout_height="@dimen/pictureTextHeight"
-                    android:gravity="center_horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="63dp"
-                        android:layout_height="63dp"
-                        android:background="@drawable/clear"
-                        android:id="@+id/btnClear"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="清空"
-                        android:textSize="@dimen/pictureFontSize"
-                        android:textColor="@color/pictureFontColor"
-                        />
-                    </LinearLayout>
-
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
