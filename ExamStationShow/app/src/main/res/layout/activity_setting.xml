@@ -39,11 +39,11 @@
         android:background="@color/bannerBgColor"
         android:gravity="right"
         >
-        <TextView
+        <!--<TextView
             android:layout_width="119dp"
             android:layout_height="39dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/logo"
-            />
+            />-->
     </LinearLayout>
 </LinearLayout>

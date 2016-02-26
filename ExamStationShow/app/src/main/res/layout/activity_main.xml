@@ -79,11 +79,11 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/leftPadding"
             />
-        <TextView
+       <!-- <TextView
             android:layout_width="119dp"
             android:layout_height="39dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/logo"
-            />
+            />-->
     </LinearLayout>
 </LinearLayout>
