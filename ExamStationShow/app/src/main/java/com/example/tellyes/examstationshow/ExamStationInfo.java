@@ -1,7 +1,7 @@
 package com.example.tellyes.examstationshow;
 
 /**
- * Created by tellyes on 2015/12/23.
+ * Created by tellyes on 2015/12/23. by zhangying
  */
 public class ExamStationInfo {
     public String result;
